@@ -1,0 +1,24 @@
+# Java
+*.jar
+
+# Generic log or temperory files
+*.log
+*.tmp
+
+# Temporary and objects directories
+tmp/
+target/
+build/
+bin/
+
+#Tools
+.DS_Store
+.idea
+.vscode
+.vagrant/
+.gradle
+*.iml
+/.settings/
+.classpath
+.project
+
