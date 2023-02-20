@@ -1,5 +1,7 @@
-spring.datasource.url: jdbc:h2:file:./camunda-h2-database
-
-camunda.bpm.admin-user:
-  id: admin
-  password: admin
+spring:
+  application:
+    name: camunda-loan-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
