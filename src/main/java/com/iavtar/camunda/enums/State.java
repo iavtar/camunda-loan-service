@@ -6,7 +6,8 @@ import lombok.Getter;
 public enum State {
 
     START("start"),
-    END("end");
+    END("end"),
+    FAILED("failed");
 
     private String value;
 
