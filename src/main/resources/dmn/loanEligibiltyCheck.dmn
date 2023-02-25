@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1wmas2q" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_1wmas2q" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
   <decision id="check_eligibility_dmn" name="Check Eligibility Dmn" camunda:versionTag="v1.1">
     <decisionTable id="DecisionTable_1t962ra">
-      <input id="Input_1" label="Age">
+      <input id="Input_1" label="age">
         <inputExpression id="InputExpression_1" typeRef="integer">
-          <text></text>
+          <text>age</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0mhkq63">
+      <input id="InputClause_0mhkq63" label="employmentSector" camunda:inputVariable="employmentSector">
         <inputExpression id="LiteralExpression_131ww9e" typeRef="string">
-          <text>Profession</text>
+          <text>employmentSector</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_09c8kqz">
+          <text></text>
+        </inputValues>
+      </input>
+      <input id="InputClause_08yhhsk" label="annualIncome" biodi:width="192" camunda:inputVariable="annualIncome">
+        <inputExpression id="LiteralExpression_0o78iui" typeRef="long">
+          <text></text>
         </inputExpression>
       </input>
       <output id="Output_1" label="isEligible" name="isEligible" typeRef="boolean" />
@@ -18,32 +26,13 @@
           <text>&gt;= 21</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1djor3m">
-          <text>"Doctor","Engineer","Teacher","Others"</text>
+          <text>"private"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l7uvjn">
+          <text>&gt;= 1000000</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0jcuio6">
           <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0nv4r2i">
-        <inputEntry id="UnaryTests_1vz77db">
-          <text>&lt; 21</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_088mfff">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0wdm91s">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_103jaju">
-        <inputEntry id="UnaryTests_1ftbzgj">
-          <text>&gt;= 21</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0s891jk">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_17c2j87">
-          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>

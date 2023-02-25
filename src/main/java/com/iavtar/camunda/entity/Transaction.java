@@ -1,10 +1,12 @@
 package com.iavtar.camunda.entity;
 
 import com.iavtar.camunda.enums.State;
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
 
+@Builder
 @Data
 @Entity
 public class Transaction {
