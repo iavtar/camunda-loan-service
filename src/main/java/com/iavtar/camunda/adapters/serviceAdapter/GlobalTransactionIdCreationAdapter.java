@@ -1,6 +1,5 @@
 package com.iavtar.camunda.adapters.serviceAdapter;
 
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.iavtar.camunda.entity.Transaction;
 import com.iavtar.camunda.enums.State;
@@ -27,10 +26,9 @@ public class GlobalTransactionIdCreationAdapter implements JavaDelegate {
         execution.setVariable("annualIncome", loanQuoteRequest.getAnnualIncome());
         execution.setVariable("employmentSector", loanQuoteRequest.getEmploymentSector().getValue());
         execution.setVariable("gender", loanQuoteRequest.getGender().getValue());
-//        Thread.sleep(100000);
         transactionRepository.save(Transaction.builder()
                         .transactionId((String) execution.getVariable("transactionId"))
-                        .state(State.FETCH_QUOTES_START)
+                        .state(State.FETCH_QUOTE_STARTED)
                 .build());
         return;
     }

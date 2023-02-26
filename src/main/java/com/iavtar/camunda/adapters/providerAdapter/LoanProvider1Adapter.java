@@ -3,7 +3,9 @@ package com.iavtar.camunda.adapters.providerAdapter;
 import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.springframework.stereotype.Component;
 
+@Component
 public class LoanProvider1Adapter implements JavaDelegate {
 
     @Override
@@ -11,7 +13,7 @@ public class LoanProvider1Adapter implements JavaDelegate {
         try {
             return;
         } catch (Exception exception) {
-            throw new BpmnError("providerError", "Error occured fetching quotes from loan provider1");
+            throw new BpmnError("providerError", "Error while fetching quotes");
         }
     }
 

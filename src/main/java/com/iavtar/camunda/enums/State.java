@@ -6,7 +6,10 @@ import lombok.Getter;
 public enum State {
 
     START("start"),
-    FETCH_QUOTES_START("fetch_quotes_start"),
+    FETCH_QUOTE_STARTED("fetch_quotes_started"),
+    FETCH_QUOTE_FAILED("fetch_quotes_failed"),
+    FETCH_QUOTE_ELIGIBILITY_FAILED("fetch_quotes_eligibility_failed"),
+    NOT_ELIGIBLE("not_eligible"),
     END("end"),
     FAILED("failed");
 
